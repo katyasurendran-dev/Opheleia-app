@@ -5,7 +5,9 @@
     --v-black: #000000;
     --v-gray-border: #E5E5E5;
     --v-text-soft: #888888;
-    --v-placeholder-dark: #444444; /* Darker text for placeholders */
+    --v-placeholder-dark: #444444; /* Darker text for placeholders 
+    
+    jk no longer for placeholders but i am NOT changing the name bc it shows up too often*/
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -48,7 +50,11 @@ body {
     justify-content: center;
     border-radius: 2px;
 }
-
+.logo-img{
+    width: 100%;
+    height: 100%;
+    object-fit: center;
+}
 .tagline {
     font-weight: 700;
     font-size: 11px;
@@ -70,7 +76,7 @@ body {
 .form-slender {
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 20px;
     position: relative;
 }
 
@@ -105,7 +111,7 @@ body {
 .field-header {
     width: 100%;
     border: none;
-    font-size: 24px;
+    font-size: 40px;
     font-weight: 400;
     outline: none;
     background: transparent;
@@ -119,7 +125,7 @@ body {
     font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
-    color: var(--v-text-soft);
+    color: var(--v-placeholder-dark);
     margin-bottom: 30px;
     background: transparent;
     outline: none;
@@ -128,20 +134,19 @@ body {
 
 /* Darkened placeholder text for better appeal/readability */
 .main-input::placeholder {
-    color: var(--v-placeholder-dark);
+    color: var(--v-text-soft);
     opacity: 1;
 }
 
 .button-row {
     margin-top: 80px;
-    display: flex;
-    justify-content: center;
+
 }
 /* edited to try and center with margin */
 .cta-btn {
-    width: 50%;
-    margin: 0 auto; 
-    background: var(--v-black);
+    width: 400px;
+    display: block;
+    background: var(--v-purple-dark);
     color: white;
     border: none;
     padding: 28px;
