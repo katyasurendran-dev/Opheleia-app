@@ -24,18 +24,50 @@ app.post("/api/generate-specification", async (req, res) => {
       });
     }
 
-    const prompt = `You are a product expert. Create a markdown document about: 
+    const prompt = `You are a product expert. Create a structured markdown document with the following sections EXACTLY in this order:
+
+# Executive Summary
+(Short 5-8 sentence summary of the product strategy)
+
+# Competitor Analysis
+## Competitor 1: [Name]
+### Successes
+- ...
+### Flaws
+- ...
+
+## Competitor 2: [Name]
+### Successes
+- ...
+### Flaws
+- ...
+
+## Competitor 3: [Name]
+### Successes
+- ...
+### Flaws
+- ...
+
+# Market Trends
+...
+
+# User Stories
+1. ...
+2. ...
+
+# Success Metrics
+- ...
+
+# Roadmap
+- 3 Months:
+- 6 Months:
+- 12 Months:
+
 Product: ${product}
 Target Users: ${demographic}
 Goal: ${goal}
+`;
 
-Include: 
-- Information from the product, demographic, and goal
-- Top 3 competitiors (flaws and successes)
-- Market trends and insights on the current competitors, the product itself and demographic needs
-- 10 user stories
-- Success metrics
-- Make a 3-6-12 month timeline`;
 
     const response = await fetchFn("https://api.anthropic.com/v1/messages", {
       method: "POST",
@@ -124,7 +156,7 @@ app.post("/api/csv", async (req, res) => {
       return res.status(400).send("No tasks found in markdown. Try adding bullet points, numbered lists, or checkboxes.");
     }
     
-    // Remove duplicates and filter out section headers and timeline months
+    // Remove duplicates and filter section headers and timeline months
     const uniqueTasks = [...new Set(tasks)].filter(task => 
       task.length > 0 && 
       !task.startsWith('#') &&
