@@ -1,3 +1,5 @@
+# ÓPHELEIA APP #
+
 **Inspiration**
 
 ÓPHELEIA was imagined from the pressure and fast-paced environment in the hackathon SheInnovates. Originally, our team planned to build a health community blog; however, as the competition started, we decided to solve a more technical, high-impact problem in the given categories. We pivoted to focus on the technical intricacies of Product Management, creating a tool that bridges the gap between raw data and actionable strategy.
